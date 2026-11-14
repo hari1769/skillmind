@@ -1,0 +1,17 @@
+{
+  "name": "skillmind-ai",
+  "version": "1.0.0",
+  "description": "SkillMind AI — Personalized AI Learning Platform",
+  "private": true,
+  "scripts": {
+    "dev:frontend": "cd frontend && npm run dev",
+    "dev:backend": "cd backend && uvicorn app.main:app --reload --host 0.0.0.0 --port 8000",
+    "build": "cd frontend && npm run build",
+    "install:all": "cd frontend && npm install",
+    "seed": "cd backend && python -m app.seed",
+    "start": "cd backend && uvicorn app.main:app --host 0.0.0.0 --port 8000"
+  },
+  "workspaces": [
+    "frontend"
+  ]
+}

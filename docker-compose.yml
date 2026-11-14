@@ -1,0 +1,20 @@
+services:
+  backend:
+    build: ./backend
+    environment:
+      DATABASE_URL: sqlite:////data/skillmind.db
+      LLM_PROVIDER: demo
+    volumes:
+      - skillmind_data:/data
+    ports:
+      - "8000:8000"
+  frontend:
+    build: ./frontend
+    environment:
+      VITE_API_URL: http://localhost:8000
+    ports:
+      - "5173:5173"
+    depends_on:
+      - backend
+volumes:
+  skillmind_data:
